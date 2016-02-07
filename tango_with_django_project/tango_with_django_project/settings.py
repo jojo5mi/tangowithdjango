@@ -11,6 +11,14 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+print ("__file__ " + __file__);
+print os.path.dirname(__file__)
+print os.path.dirname(os.path.dirname(__file__))
+
+
+# Added by Jo from Chapter 5
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -82,3 +90,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Added by Jo from Chapter 5
+TEMPLATE_DIRS = ("/Users/josmith/code/tango_with_django_project", TEMPLATE_PATH)
+
+#Added by Jo from Chapter 5.2.1
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS =  (
+    STATIC_PATH,
+)
+
+#Added by Jo from Chapter 5.4
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+
+<html>
+
+	<head>
+		<title>Rango</title>
+	</head>
+
+	<body>
+		<h1>Rango says...hello world!</h1>
+
+		{% if categories %}
+		<ul>
+			{% for category in categories %}
+			<li>
+				<a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<strong>There are no categories present.</strong>
+		{% endif %}
+
+
+		<h2>Top 5 Pages</h2>
+		{% if pages %}
+		<ol>
+			{% for page in pages %}
+			<li>
+				<a href="{{ page.url }}">{{ page.title }}</a> - {{ page.category }} ({{ page.views }} view(s))
+			</li>
+			{% endfor %}
+		</ol>
+		{% else %}
+		<strong>There are no pages at present.</strong>
+		{% endif %}
+	</body>
+
+</html>
