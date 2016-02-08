@@ -1,5 +1,8 @@
 from django import forms
-from rango.models import Page, Category
+from django.contrib.auth.models import User
+from rango.models import Page, Category, UserProfile
+
+
 
 
 #Added from Chapter 8.2.1
@@ -33,6 +36,19 @@ class PageForm(forms.ModelForm):
             cleaned_data['url']= url
 
         return cleaned_data
+
+#Added from Chapter 9.4.1
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password')
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('website', 'picture')
 
 
 

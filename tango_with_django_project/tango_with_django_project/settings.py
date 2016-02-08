@@ -107,3 +107,9 @@ STATICFILES_DIRS =  (
 #Added by Jo from Chapter 5.4
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#Added by Jo from Chapter 9.1
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+)
