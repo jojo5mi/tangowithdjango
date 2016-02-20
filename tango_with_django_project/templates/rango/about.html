@@ -1,17 +1,14 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
 {% load staticfiles %}
-<html>
 
-	<head>
-		<title>About Rango</title>
-	</head>
+{% block title %}About Rango{% endblock %}
 
-	<body>
+{% block body_block %}
+
 		<h1>All about me</h1>
 		I'm a chameleon<br/>
 		
 		<img src="{% static "images/chameleon.jpg" %} " alt="Picture of a chameleon" />
-	</body>
 
-</html>
+{% endblock %}

@@ -1,12 +1,10 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load staticfiles %}
 
 
-<html>
+{% block title %}Rango{% endblock %}
 
-	<head>
-		<title>Rango</title>
-	</head>
-
+{% block body_block %}
 	{% if user.is_authenticated %}
 
 		<h1>Rango says... Hello {{ user.username }}!</h1>
@@ -40,20 +38,5 @@
 		<strong>There are no pages at present.</strong>
 		{% endif %}
 
-	<a href="/rango/add_category/">Add a new category</a>
-	</br>
+	{% endblock %}
 
-	{% if user.is_authenticated %}
-	<a href="/rango/restricted/">Restricted Page</a><br />
-	<a href="/rango/logout/">Logout</a><br />
-	{% else %}
-	<a href="/rango/register/">Register here</a>
-	</br>
-	<a href="/rango/login/">Login</a>
-	{% endif %}
-
-	</html>
-
-	</body>
-
-</html>
