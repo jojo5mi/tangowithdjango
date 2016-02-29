@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load staticfiles %}
 
 
@@ -37,6 +37,6 @@
 		{% else %}
 		<strong>There are no pages at present.</strong>
 		{% endif %}
-
+		<p> Visits: {{ visits }} </p>
 	{% endblock %}
 
